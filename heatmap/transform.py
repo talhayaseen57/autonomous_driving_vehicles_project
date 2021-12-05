@@ -30,8 +30,8 @@ def four_point_transform(image, pts, shape:list = []):
 		# in the top-left, top-right, bottom-right, and bottom-left
 		# order
 	else:
-		maxWidth = shape[0]*100
-		maxHeight = shape[1]*100
+		maxWidth = shape[1]*100
+		maxHeight = shape[0]*100
 	dst = np.array([
 		[0, 0],
 		[maxWidth - 1, 0],

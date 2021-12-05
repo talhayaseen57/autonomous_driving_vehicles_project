@@ -9,3 +9,4 @@ def count(meta_data:list):
         if data[2]: count[data[1][1]]+=1
     for element in count:
         element.append(element[1]/element[0])
+    return count
