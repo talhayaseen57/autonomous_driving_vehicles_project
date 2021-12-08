@@ -7,10 +7,10 @@ from gradient import generate_gradient
 class Track:
 
     def __init__(self, image, bbox, shape: list):
-        """takes image and the shape of the track as a list
-        where the first element is the coordinates for a bbox for the track
-        and the second is a list of y coordinates for rows
-        and the third is a list of x coordinates for columns"""
+        """takes image of a track,
+        an array of coordinates for a bounding box,
+        and the shape of the track"""
+
         self.image = image
         self.rows, self.columns = shape
         self.shape = shape
@@ -20,9 +20,13 @@ class Track:
         self.types = [None]*len(self.regions)
 
     def find_map(self):
+        """returns a birds eye view of the map"""
+
         return four_point_transform(self.image, self.bbox, self.shape)
 
     def find_regions(self):
+        """returns a list of bounding boxes for each region in the map"""
+
         dims = self.map.shape[:2]
         y_increment = x_increment = 100
 
@@ -52,9 +56,14 @@ class Track:
         return regions
 
     def set_type(self, type,  i):
+        """takes the element type and an index (i) for the region,
+        and sets the element type for that region of the map"""
+
         self.types[i] = type
 
     def generate_heat_map(self, data):
+        """takes data dict and draws a heatmap"""
+
         gradiant = generate_gradient("green", "red")
         heat_map = np.copy(self.map)
 

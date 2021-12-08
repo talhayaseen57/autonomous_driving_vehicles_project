@@ -4,11 +4,17 @@ import cv2
 
 
 def order_points(pts):
+    """takes an array of points coordinates,
+    and returns a sorted array: [tl, tr, br, bl]"""
+
     rect = pts[np.lexsort((pts[:, 0], pts[:, 1]))].astype("float32")
     return rect
 
 
 def four_point_transform(image, pts, shape: list = []):
+    """takes image and an array of points and an optional shape,
+    and returns the new transformed prespective (birds eye view)"""
+
     # obtain a consistent order of the points and unpack them
     # individually
     rect = order_points(pts)
@@ -32,8 +38,10 @@ def four_point_transform(image, pts, shape: list = []):
         # in the top-left, top-right, bottom-right, and bottom-left
         # order
     else:
+        # if shape is given find maxWidth and maxHeight based on the shape
         maxWidth = shape[1]*100
         maxHeight = shape[0]*100
+
     dst = np.array([
         [0, 0],
         [maxWidth - 1, 0],
