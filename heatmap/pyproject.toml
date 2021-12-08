@@ -8,6 +8,7 @@ authors = ["batbat99 <hbatayneh@outlook.com>"]
 python = ">=3.9,<3.11"
 opencv-python = "^4.5.4"
 colour = "^0.1.5"
+flake8 = "^4.0.1"
 
 [tool.poetry.dev-dependencies]
 
