@@ -69,7 +69,10 @@ class Track:
 
         for i, region in enumerate(self.regions):
             error_rate = data[self.types[i]][2]
-            color = gradiant[round(error_rate*len(gradiant))]
+            color = gradiant[int(error_rate*len(gradiant))]
             c = (int(color.blue*255), int(color.green*255), int(color.red*255))
             cv2.rectangle(heat_map, region[0][0], region[1][1], c, -1)
+        
+
+        heat_map = cv2.addWeighted(self.map, 0.7, heat_map, 0.3, 0)
         return heat_map
