@@ -3,4 +3,5 @@ my contribution to the class project for the subject basics of autonomous drivin
 
 # tasks
 1- creating a heatmap based on the type of road element
+2- creating a classifier based on the road element typr
 
