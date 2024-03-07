@@ -1,8 +1,14 @@
-# autonomous_driving_vehicles_project
-my contribution to the class project for the subject basics of autonomous driving vehicles
+# Autonomous Driving Vehicles Project
 
-# tasks
-1- creating a heatmap based on the type of road element
+This repository contains my contributions to the class project for the subject Basics of Autonomous Driving Vehicles.
 
-2- creating a classifier based on the road element typr
+## Overview
 
+In this project, I worked on two main tasks:
+
+1. Creating a heatmap based on the type of road element.
+2. Creating a classifier based on the road element type.
+
+## Acknowledgements
+
+Special thanks to the instructors of the Basics of Autonomous Driving Vehicles course for providing guidance and support throughout the project.
